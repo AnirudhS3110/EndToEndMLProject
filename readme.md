@@ -13,3 +13,10 @@
 #### Till now we have created models in Jupyter Notebook, Now we are going tp write those as modular code
 ### Will get to learn about EDA
 ![alt text](image.png)
+
+
+# DAY-3
+## Data Ingestion:
+#### In projects, there will be Big Data Team, their job is to collect the datas (huge volume of datas) adn store it in Hadoop or  Database, example MongoDB
+#### Its the Job of DataScientists is, to first Read the Datas from the Data Storing Source, Split the Data into Train Test Split
+#### After that DAta Trasnformatiom will happen
