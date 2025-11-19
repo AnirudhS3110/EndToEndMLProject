@@ -35,6 +35,7 @@ models/
 checkpoints/
 logs/
 *.log
+.gitignore
 
 # Jupyter Notebooks
 .ipynb_checkpoints/

@@ -20,3 +20,7 @@
 #### In projects, there will be Big Data Team, their job is to collect the datas (huge volume of datas) adn store it in Hadoop or  Database, example MongoDB
 #### Its the Job of DataScientists is, to first Read the Datas from the Data Storing Source, Split the Data into Train Test Split
 #### After that DAta Trasnformatiom will happen
+
+# DAY- 4
+## Data Transformation:
+#### The main purose of this phase is Feature Engineering, Data Cleaning, Converting Characteritical Features to Numerical Features

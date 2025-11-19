@@ -9,6 +9,8 @@ from src.logger import logging
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
+from src.components.data_transformation import DataTransformation
+
 from dataclasses import dataclass
 
 @dataclass # using this we can directly Declare and assign Class variable without having any init function, we can use this if  we are only definig variables in a class and nothing other than that
@@ -19,19 +21,19 @@ class DataInjectionConfig:
     # Now this Data Ingestion Component Knows where to save the test ,test and raw parts of the data
 
 class DataIngestion:
-    def __inti___(self):
+    def __init__(self):
         self.dataIngestion  = DataInjectionConfig() #Through this Datainhestion gets all the path nameslo
     
     def initiate_ingestion(self):
         try:
             df = pd.read_csv("notebook/data/stud.csv")
             logging.info("Read the Dataset")
-            os.makedir(os.path.dirname(self.dataIngestion.raw_data_path), exist_ok=True)
+            os.makedirs(os.path.dirname(self.dataIngestion.raw_data_path), exist_ok=True)
 
-            df.to_csv("self.dataIngestion.raw_data_path",header=True,index=False)
+            df.to_csv(self.dataIngestion.raw_data_path,header=True,index=False)
             train,test = train_test_split(df, test_size=0.2, random_state=42)
-            train.to_csv("self.dataIngestion.train_data_path",header=True,index=False)
-            test.to_csv("self.dataIngestion.t_dattest_path",header=True,index=False)
+            train.to_csv(self.dataIngestion.train_data_path,header=True,index=False)
+            test.to_csv(self.dataIngestion.test_data_path,header=True,index=False)
             logging.info("Dataset was splitted and stored, End of Data Ingestion")
 
             return(
@@ -45,4 +47,7 @@ class DataIngestion:
 
 if __name__ =="__main__":
     obj = DataIngestion()
-    obj.initiate_ingestion()
+    train, test = obj.initiate_ingestion()
+    
+    data_transformation = DataTransformation()
+    data_transformation.initiate_data_transformation(train,test)
