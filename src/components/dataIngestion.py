@@ -10,6 +10,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 from src.components.data_transformation import DataTransformation
+from src.components.model_trainer import ModelTraining
 
 from dataclasses import dataclass
 
@@ -50,4 +51,8 @@ if __name__ =="__main__":
     train, test = obj.initiate_ingestion()
     
     data_transformation = DataTransformation()
-    data_transformation.initiate_data_transformation(train,test)
+    train_arr,test_arr,preprocessor_path=data_transformation.initiate_data_transformation(train,test)
+
+    model_trainer = ModelTraining()
+    best_score = model_trainer.initiate_training(train_arr,test_arr,preprocessor_path)
+    print(best_score)

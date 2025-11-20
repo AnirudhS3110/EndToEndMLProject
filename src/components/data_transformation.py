@@ -15,7 +15,7 @@ from sklearn.pipeline import Pipeline
 
 from sklearn.impute import SimpleImputer # This is for handling missing values
 
-dataclass
+@dataclass
 class DataTransformationConfig:
     preprocessor_path = os.path.join('artifacts','preprocessor.pkl')
 

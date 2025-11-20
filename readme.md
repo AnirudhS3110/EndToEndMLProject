@@ -24,3 +24,9 @@
 # DAY- 4
 ## Data Transformation:
 #### The main purose of this phase is Feature Engineering, Data Cleaning, Converting Characteritical Features to Numerical Features
+
+# DAY-5
+## Model Training:
+### The output from model transformation, i.e the train array and test array is given as input to model trainer
+### Inside model trainer, the test train datasplit is done .
+### Models are stored as dictonary, and each model is trained with the test and train ds. The model with Best test accuracy model is stored as .pkl file
