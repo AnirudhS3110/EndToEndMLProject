@@ -11,7 +11,7 @@ class PredictPipline:
     def __init__(self):
         pass
 
-    def predict_score(features):
+    def predict_score(self,features):
        try:
            modelpath = os.path.join('artifacts','model.pkl')
            preprocessorpath = os.path.join('artifacts','preprocessor.pkl')

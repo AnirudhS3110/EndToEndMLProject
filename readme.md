@@ -33,3 +33,6 @@
 
 # DAY-6
 ## Done with Hyperparameter Tuning and creating a simple HTML- Flask application
+
+# DAY-7
+## Setting up Elatic Beanstalk
