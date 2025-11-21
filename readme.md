@@ -30,3 +30,6 @@
 ### The output from model transformation, i.e the train array and test array is given as input to model trainer
 ### Inside model trainer, the test train datasplit is done .
 ### Models are stored as dictonary, and each model is trained with the test and train ds. The model with Best test accuracy model is stored as .pkl file
+
+# DAY-6
+## Done with Hyperparameter Tuning and creating a simple HTML- Flask application

@@ -9,6 +9,7 @@ from sklearn.model_selection import GridSearchCV
 import numpy as np
 import pandas as pd
 import dill  # Library which helps to create pil file
+import pickle
 
 def save_object(path,obj):
     try:
@@ -38,5 +39,12 @@ def evaluate_model(x_train,y_train,x_test,y_test,models,params):
             test_score = r2_score(y_test,test_pred)
             report[name] = test_score
         return report
+    except Exception as e:
+        raise CustomException(e,sys)
+    
+def load_object(path):
+    try:
+        with open(path,'rb') as file_obj:
+            return pickle.load(file_obj)
     except Exception as e:
         raise CustomException(e,sys)
