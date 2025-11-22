@@ -1,7 +1,7 @@
 import pickle
 import numpy as np
 from sklearn.preprocessing import StandardScaler
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template,redirect
 from src.pipeline.predict_pipeline import CustomData, PredictPipline
 
 application = Flask(__name__)
@@ -11,7 +11,7 @@ app = application
 ## ROute for homepage
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return redirect('/predictdata')
 
 @app.route('/predictdata', methods=['GET','POST'])
 def predict_datapoint():

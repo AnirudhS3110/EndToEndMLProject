@@ -36,3 +36,10 @@
 
 # DAY-7
 ## Setting up Elatic Beanstalk
+![alt text](image-3.png)
+### - Elastic BeanStalk is a server or run time env which runs on Linux machine   
+### - Elastic Beanstalk just requires the Configuration of the application we are about to deploy.
+### - The config is present in .ebextensions folder(python.config file)
+### - We are gonna use Codepipeline in order to create a pipeline between GitHub repository and the AWS Elastic Beanstalk
+### - The function of this pipeline is, to commit or deploy our changes in the code, automatically inside the Elastic Bean Stalk(which is a linux machine)
+### - This pipleine which we wrote in CodePipeline is called Continuoius Delivery Pipline
