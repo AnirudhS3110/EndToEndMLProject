@@ -6,14 +6,12 @@ from src.pipeline.predict_pipeline import CustomData, PredictPipline
 
 application = Flask(__name__)
 
-app = application
-
 ## ROute for homepage
-@app.route('/')
+@application.route('/')
 def index():
    return redirect('/predictdata')
 
-@app.route('/predictdata', methods=['GET','POST'])
+@application.route('/predictdata', methods=['GET','POST'])
 def predict_datapoint():
     if request.method =='GET':
         return render_template('home.html')
@@ -34,5 +32,5 @@ def predict_datapoint():
          return render_template('home.html',result= predicted_score[0])
 
 
-if __name__=="__main__":
-    app.run(host="0.0.0.0")     
+# if __name__=="__main__":
+#     application.run(host="0.0.0.0")     
